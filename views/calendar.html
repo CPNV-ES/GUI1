@@ -15,99 +15,90 @@
 <body>
 
 <!-- Header -->
-<div class="flex space-x-4 bg-yellow-500">
-    <div class="inline-flex bg-blue-500">
-        <span class="inline-block text-4xl">1</span>
-        <div class="">
-            <div class="block self-center text-sm text-gray-400">Lu</div>
-            <div class="block self-center text-sm text-gray-400">Jan 2020</div>
+<div class="flex mx-12 my-6">
+    <div class="flex self-center w-64 space-x-2">
+        <span class="text-6xl font-semibold text-gray-800">10</span>
+        <div>
+            <div class="text-xl font-semibold text-gray-400">Lun</div>
+            <div class="text-xl font-semibold text-gray-400">Jan 2020</div>
         </div>
     </div>
-    <div class="inline-flex self-center bg-red-500">
-        <button>Today</button>
-        <button>Dark</button>
+    <div class="flex self-center w-full justify-end space-x-1">
+        <button class="flex-none flex items-center justify-center px-6 py-2 rounded-md bg-purple-100 text-xl font-semibold text-purple-500" type="button" aria-label="like">Today</button>
+        <button class="fle6-none flex items-center justify-center px-2 py-2 rounded-md bg-gray-100 text-gray-400" type="button" aria-label="like">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+        </button>
     </div>
 </div>
 
 <!-- Days -->
 <div class="bg-white px-4 py-3 flex items-center justify-between sm:px-6">
-    <div class="flex-1 flex justify-between sm:hidden">
-        <a href="#"
-           class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-            Previous
-        </a>
-        <a href="#"
-           class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-            Next
-        </a>
-    </div>
-    <nav class="relative z-0 inline-flex space-x-6" aria-label="Pagination">
+    <nav class="relative z-0 inline-flex space-x-6" aria-label="Pagination"6>
         <a href="#"
            class="relative inline-flex items-center px-2 py-2 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
             <span class="sr-only">Previous</span>
             <!-- Heroicon name: solid/chevron-left -->
-            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                 aria-hidden="true">
-                <path fill-rule="evenodd"
-                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                      clip-rule="evenodd"/>
-            </svg>
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+        6</svg>
         </a>
 
-        <a href="#" aria-current="page"
-           class="z-10 rounded-lg shadow-sm bg-indigo-500 border-indigo-500 text-indigo-600 px-2 py-4 relative text-sm text-center">
-            <span class="block text-gray-100">
+        <a href="" aria-current="page"
+           class="rounded-lg shadow-sm bg-purple-500 text-pruple-600 px-2 py-2 relative text-sm text-center">
+            <span class="block text-base font-medium text-gray-100">
                 Lun
             </span>
-            <span class="block font-medium text-white">
-                1
-            </span>
-        </a>
-        <a href="#" aria-current="page" class="z-10 px-1 py-4 relative text-sm text-center">
-            <span class="block">
-                Mar
-            </span>
-            <span class="block font-medium">
-                2
-            </span>
-        </a>
-        <a href="#" aria-current="page" class="z-10 px-1 py-4 relative text-sm text-center">
-            <span class="block">
-                Mer
-            </span>
-            <span class="block font-medium">
-                3
-            </span>
-        </a>
-        <a href="#" aria-current="page" class="z-10 px-1 py-4 relative text-sm text-center">
-              <span class="block">
-                Jeu
-            </span>
-            <span class="block font-medium">
-                4
-            </span>
-        </a>
-        <a href="#" aria-current="page" class="z-10 px-1 py-4 relative text-sm text-center">
-            <span class="block">
-                Ven
-            </span>
-            <span class="block font-medium">
-                5
-            </span>
-        </a>
-        <a href="#" aria-current="page" class="z-10 px-1 py-4 relative text-sm text-center">
-            <span class="block">
-                Sam
-            </span>
-            <span class="block font-medium">
+            <span class="block text-2xl text-white font-semibold">
                 6
             </span>
         </a>
-        <a href="#" aria-current="page" class="z-10 px-1 py-4 relative text-sm text-center">
-            <span class="block">
-                Dim
+        <a href="" aria-current="page" class="px-1 py-2 relative text-sm text-center">
+            <span class="block text-base font-medium text-gray-400">
+               Mar
             </span>
-            <span class="block font-medium">
+            <span class="block text-2xl font-semibold">
+                2
+            </span>
+        </a>
+        <a href="#" aria-current="page" class="px-1 py-2 relative text-sm text-center">
+            <span class="block text-base font-medium text-gray-400">
+               Mer
+            </span>
+            <span class="block text-2xl font-semibold">
+                3
+            </span>
+        </a>
+        <a href="#" aria-current="page" class="px-1 py-2 relative text-sm text-center">
+              <span class="block text-base font-medium text-gray-400">
+               Jeu
+            </span>
+            <span class="block text-2xl font-semibold">
+                4
+            </span>
+        </a>
+        <a href="#" aria-current="page" class="px-1 py-2 relative text-sm text-center">
+            <span class="block text-base font-medium text-gray-400">
+               Ven
+            </span>
+            <span class="block text-2xl font-semibold">
+                5
+            </span>
+        </a>
+        <a href="#" aria-current="page" class="px-1 py-2 relative text-sm text-center">
+            <span class="block text-base font-medium text-gray-400">
+               Sam
+            </span>
+            <span class="block text-2xl font-semibold">
+                6
+            </span>
+        </a>
+        <a href="#" aria-current="page" class="px-1 py-2 relative text-sm text-center">
+            <span class="block text-base font-medium text-gray-400">
+               Dim
+            </span>
+            <span class="block text-2xl font-semibold">
                 7
             </span>
         </a>
@@ -115,16 +106,16 @@
            class="relative inline-flex items-center px-2 py-2 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
             <span class="sr-only">Next</span>
             <!-- Heroicon name: solid/chevron-right -->
-            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                 aria-hidden="true">
-                <path fill-rule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clip-rule="evenodd"/>
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
             </svg>
         </a>
     </nav>
 </div>
-</div>
+
+<!-- Day Content -->
+<div class="mx-12e my-2 border border-gray-100">
+
 </div>
 
 </body>
