@@ -6,13 +6,10 @@
 
     <title>GUI</title>
 
-    <link
-      rel="stylesheet"
-      href="/node_modules/tailwindcss/dist/tailwind.min.css"
-    />
+    <link rel="stylesheet" href="/resource/css/styles.css"/>
   </head>
 
-  <body>
+  <body class="min-h-screen dark">   
     <!-- Header -->
     <div class="flex mx-12 my-6">
       <div class="flex self-center w-64 space-x-2">
@@ -23,22 +20,7 @@
         </div>
       </div>
       <div class="flex self-center w-full justify-end space-x-1">
-        <button
-          class="
-            flex-none flex
-            items-center
-            justify-center
-            px-6
-            py-2
-            rounded-md
-            bg-purple-100
-            text-xl
-            font-semibold
-            text-purple-500
-          "
-          type="button"
-          aria-label="like"
-        >
+        <button class="flex-none flex items-center justify-center px-6 py-2 rounded-md bg-purple-100 text-xl font-semibold text-purple-500" type="button" aria-label="like">
           Today
         </button>
         <button
@@ -251,10 +233,20 @@
 
     <!-- Day Content -->
     <div class="mx-12 my-4 border-t border-gray-100">
+      <div class="mt-2 mb-6 text-lg font-semibold text-gray-300">
+        <span>Time</span>
+        <span>Course</span>
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+          </svg>
+        </button>
+      </div>
+
       <div class="table w-full">
         <div class="table-row-group">
-          <div class="table-row my-6">
-            <div class="table-cell">08:00</div>
+          <div class="table-row">
+            <div class="table-cell font-semibold text-xl text-gray-800">08:00</div>
             <div class="table-cell bg-purple-500 rounded-xl text-white">
               <h3>Mathematics</h3>
               <p>SI-T1a</p>
@@ -264,7 +256,7 @@
           </div>
 
           <div class="table-row">
-            <div class="table-cell">09:50</div>
+            <div class="table-cell font-semibold text-xl text-gray-800">09:50</div>
             <div class="table-cell bg-gray-200 rounded-xl text-gray-800">
               <h3>Module: CLD1</h3>
               <p>SI-T1a</p>
