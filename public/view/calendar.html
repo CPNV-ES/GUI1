@@ -6,21 +6,36 @@
 
     <title>GUI</title>
 
-    <link rel="stylesheet" href="../resource/css/styles.css"/>
+    <link rel="stylesheet" href="../resource/css/styles.css" />
   </head>
 
-  <body class="dark">   
+  <body class="dark text-gray-800">
     <!-- Header -->
     <div class="flex mx-12 my-6">
       <div class="flex self-center w-64 space-x-2">
-        <span class="text-6xl font-semibold text-gray-800">10</span>
+        <span class="text-6xl font-semibold">10</span>
         <div>
           <div class="text-xl font-semibold text-gray-300">Lun</div>
           <div class="text-xl font-semibold text-gray-300">Jan 2020</div>
         </div>
       </div>
       <div class="flex self-center w-full justify-end space-x-1">
-        <button class="flex-none flex items-center justify-center px-6 py-2 rounded-md bg-purple-100 text-xl font-semibold text-purple-500" type="button" aria-label="like">
+        <button
+          class="
+            flex-none flex
+            items-center
+            justify-center
+            px-6
+            py-2
+            rounded-md
+            bg-purple-100
+            text-xl
+            font-semibold
+            text-purple-500
+          "
+          type="button"
+          aria-label="like"
+        >
           Today
         </button>
         <button
@@ -233,38 +248,56 @@
 
     <!-- Day Content -->
     <div class="mx-12 my-4 border-t border-gray-100">
-      <div class="mt-2 mb-6 text-lg font-semibold text-gray-300">
+      <div class="hide sm:block flex flex-row mt-2 mb-6 text-lg font-semibold text-gray-300">
         <span>Time</span>
-        <span>Course</span>
+        <span class="ml-12">Course</span>
         <button>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+            />
           </svg>
         </button>
       </div>
 
-      <div class="table w-full">
-        <div class="table-row-group">
-          <div class="table-row">
-            <div class="table-cell font-semibold text-xl text-gray-800">08:00</div>
-            <div class="table-cell bg-purple-500 rounded-xl text-white">
-              <h3>Mathematics</h3>
-              <p>SI-T1a</p>
-              <p>SC-C311</p>
-              <p>DE-LAMEGO-RESENDE Ana</p>
-            </div>
-          </div>
+      <div class="space-y-4 text-left">
 
-          <div class="table-row">
-            <div class="table-cell font-semibold text-xl text-gray-800">09:50</div>
-            <div class="table-cell bg-gray-200 rounded-xl text-gray-800">
-              <h3>Module: CLD1</h3>
-              <p>SI-T1a</p>
-              <p>SC-C311</p>
-              <p>Hurni Pascal</p>
-            </div>
+        <div class="flex flex-col sm:flex-row">
+          <div class="mt-1 space-x-3 sm:space-x-0">
+            <span class="inline-block sm:block text-1xl sm:text-2xl">08:00</span>
+            <span class="inline-block sm:block text-lg text-gray-300 text-1xl">09:35</span>
+          </div>
+          <div class="w-full sm:ml-8 p-4 bg-purple-500 rounded-xl text-white">
+            <h3 class="mt-1font-bold text-2xl">Mathematics</h3>
+            <p class="mt-1 text-sm">SI-T1a</p>
+            <p class="mt-4">SC-C311</p>
+            <p class="">DE-LAMEGO-RESENDE Ana</p>
           </div>
         </div>
+
+        
+        <div class="flex flex-col sm:flex-row">
+          <div class="mt-1 space-x-3 sm:space-x-0">
+            <span class="inline-block sm:block text-1xl sm:text-2xl">08:00</span>
+            <span class="inline-block sm:block text-lg text-gray-300 text-1xl">09:35</span>
+          </div>
+          <div class="w-full sm:ml-8 p-4 bg-gray-100 rounded-xl">
+            <h3 class="mt-1font-bold text-2xl">Module: CLD1</h3>
+            <p class="mt-1 text-sm">SI-T1a</p>
+            <p class="mt-4">SC-C311</p>
+            <p class="">Hurni Pascal</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </body>
