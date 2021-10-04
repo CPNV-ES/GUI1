@@ -6,14 +6,16 @@ module.exports = {
   theme: {
       extend: {
           colors: {
-              main: colors.white,
+              white: '#F0F0F0',
+              black: '#191919',
+              main: '#F0F0F0',
               second: '#4DC591',
-              third: '#F6F6F5',
+              third: '#EBEBEB',
               fourth: '#BCC1CD',
               mainDark: '#202225',
               secondDark: '#4DC591',
               thirdDark: '#2F3136',
-              fourthDark: colors.white,
+              fourthDark: "#BCC1CD",
           }
       },
     fontFamily: {
