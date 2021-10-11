@@ -1,125 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>GUI</title>
+  <title>GUI</title>
 
-    <!-- CSS !-->
-    <link rel="stylesheet" href="../resource/css/styles.css" />
+  <!-- CSS !-->
+  <link rel="stylesheet" href="../resource/css/styles.css" />
 
-     <!-- JS !-->
-     <script type="text/javascript" src="../resource/js/darkMode.js" defer></script>
-  </head>
+  <!-- JS !-->
+  <script type="text/javascript" src="../resource/js/darkMode.js" defer></script>
+</head>
 
-  <body class="mx-12 text-black dark:text-white bg-main dark:bg-mainDark">
-    <!-- Header -->
-    <div class="flex my-6">
-      <div class="flex flex-wrap self-center w-full space-x-2">
-        <span class="text-6xl font-semibold">6</span>
-        <div>
-          <div class="text-xl font-semibold text-fourth dark:text-fourthDark">Lun</div>
-          <div class="text-xl font-semibold text-fourth dark:text-fourthDark">Jan 2020</div>
-        </div>
-      </div>
-      <div class="flex h-12 my-1 place-content-between justify-end space-x-1">
-        <button class="px-6 py-2 rounded-md bg-second bg-opacity-20 text-xl font-semibold text-second dark:bg-secondDark dark:text-secondDark dark:bg-opacity-20" type="button" aria-label="like">
-          Today
-        </button>
-        <button id="switchTheme" class="px-2 py-2 rounded-md bg-third text-fourth dark:bg-thirdDark dark:text-fourthDark" type="button" aria-label="like">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path class="block dark:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-            <path class="hidden dark:block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-        </button>
+<body class="mx-12 text-black dark:text-white bg-main dark:bg-mainDark">
+<div class="container mx-auto">
+  <!-- Header -->
+  <div class="flex my-6">
+    <div class="flex flex-wrap self-center w-full space-x-2">
+      <span class="text-6xl font-semibold">6</span>
+      <div>
+        <div class="text-xl text-fourth dark:text-fourthDark">Lun</div>
+        <div class="text-xl text-fourth dark:text-fourthDark">Jan 2020</div>
       </div>
     </div>
+    <div class="flex h-12 my-1 place-content-between justify-end space-x-1">
+      <button class="px-6 py-2 rounded-md bg-second bg-opacity-20 text-xl font-semibold text-second dark:bg-secondDark dark:text-secondDark dark:bg-opacity-20" type="button" aria-label="like">
+        Today
+      </button>
+      <button id="switchTheme" class="px-2 py-2 rounded-md bg-third text-fourth dark:bg-thirdDark dark:text-fourthDark" type="button" aria-label="like">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path class="block dark:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          <path class="hidden dark:block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      </button>
+    </div>
+  </div>
 
-    <!-- Days -->
-    <div class="bg-main grid place-items-center sm:px-6 dark:bg-mainDark">
-      <nav class="relative z-0 inline-flex space-x-2 sm:space-x-4" aria-label="Pagination">
-        <a href="#" class=" relative inline-flex items-center px-2 py-2 bg-main text-sm font-medium text-fourth dark:bg-mainDark dark:text-fourthDark">
-          <span class="sr-only">Previous</span>
-          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
-        </a>
+  <!-- Days -->
+  <div class="bg-main grid place-items-center sm:px-6 dark:bg-mainDark">
+    <nav class="relative z-0 inline-flex space-x-6" aria-label="Pagination">
+      <a href="#" class=" relative inline-flex items-center px-2 py-2 bg-main text-sm font-medium text-fourth dark:bg-mainDark dark:text-fourthDark">
+        <span class="sr-only">Previous</span>
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+      </a>
 
-        <a href="" aria-current="page" class="shadow-sm bg-second px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center dark:bg-secondDark">
-          <span class="block text-base font-medium text-white"> Lun </span>
-          <span class="block text-2xl text-white font-semibold"> 6 </span>
-        </a>
-        <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
-          <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Mar </span>
-          <span class="block text-2xl font-semibold"> 7 </span>
-        </a>
-        <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
-          <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Mer </span>
-          <span class="block text-2xl font-semibold"> 8 </span>
-        </a>
-        <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
-          <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Jeu </span>
-          <span class="block text-2xl font-semibold"> 9 </span>
-        </a>
-        <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
-          <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Ven </span>
-          <span class="block text-2xl font-semibold"> 10 </span>
-        </a>
-        <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
-          <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Sam </span>
-          <span class="block text-2xl font-semibold"> 11 </span>
-        </a>
-        <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
-          <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Dim </span>
-          <span class="block text-2xl font-semibold"> 12 </span>
-        </a>
-        <a href="#" class="relative inline-flex items-center px-2 py-2 bg-main text-sm font-medium text-fourth dark:bg-mainDark dark:text-fourthDark">
-          <span class="sr-only">Next</span>
-          <!-- Heroicon name: solid/chevron-right -->
-          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
-        </a>
-      </nav>
+      <a href="" aria-current="page" class="shadow-sm bg-second px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center dark:bg-secondDark">
+        <span class="block text-base font-medium text-white"> Lun </span>
+        <span class="block text-2xl text-white font-semibold"> 6 </span>
+      </a>
+      <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
+        <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Mar </span>
+        <span class="block text-2xl font-semibold"> 7 </span>
+      </a>
+      <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
+        <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Mer </span>
+        <span class="block text-2xl font-semibold"> 8 </span>
+      </a>
+      <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
+        <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Jeu </span>
+        <span class="block text-2xl font-semibold"> 9 </span>
+      </a>
+      <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
+        <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Ven </span>
+        <span class="block text-2xl font-semibold"> 10 </span>
+      </a>
+      <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
+        <span class="block text-base text-fourth dark:text-fourthDark"> Sam </span>
+        <span class="block text-2xl font-semibold"> 11 </span>
+      </a>
+      <a href="" aria-current="page" class="px-1 py-1 sm:px-2 sm:py-2 relative rounded-lg truncate text-sm text-center hover:shadow-sm hover:bg-second hover:bg-opacity-20 dark:hover:bg-secondDark dark:hover:bg-opacity-20">
+        <span class="block text-base font-medium text-fourth dark:text-fourthDark"> Dim </span>
+        <span class="block text-2xl font-semibold"> 12 </span>
+      </a>
+      <a href="#" class="relative inline-flex items-center px-2 py-2 bg-main text-sm font-medium text-fourth dark:bg-mainDark dark:text-fourthDark">
+        <span class="sr-only">Next</span>
+        <!-- Heroicon name: solid/chevron-right -->
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Day Content -->
+  <div class="my-4 border-t border-third dark:border-thirdDark">
+    <div class="hide sm:block relative flex flex-row mt-2 mb-6 text-lg font-semibold text-fourth dark:text-fourthDark">
+      <span class="hidden sm:inline-block">Time</span>
+      <span class="hidden sm:inline-block ml-12">Course</span>
+      <button class="absolute top-0 right-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+      </button>
     </div>
 
-    <!-- Day Content -->
-    <div class="my-4 border-t border-third dark:border-thirdDark">
-      <div class="hide sm:block relative flex flex-row mt-2 mb-6 text-lg font-semibold text-fourth dark:text-fourthDark">
-        <span class="hidden sm:inline-block">Time</span>
-        <span class="hidden sm:inline-block ml-12">Course</span>
-        <button class="absolute top-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+    <div class="space-y-4 text-left">
+
+      <div class="flex flex-col sm:flex-row">
+        <div class="flex-grow-0 mt-1 space-x-3 sm:space-x-0">
+          <span class="inline-block sm:block text-lg sm:text-2xl">08:00</span>
+          <span class="inline-block sm:block text-lg text-fourth dark:text-fourthDark">09:35</span>
+        </div>
+        <button type="button" class="flex-grow sm:ml-8 p-4 bg-second rounded-xl text-left text-white dark:bg-secondDark">
+          <h3 class="mt-1 font-bold text-2xl">Mathematics</h3>
+          <p class="mt-1 text-sm">SI-T1a</p>
+          <p class="mt-4">SC-C311</p>
+          <p class="">DE-LAMEGO-RESENDE Ana</p>
         </button>
       </div>
 
-      <div class="space-y-4 text-left">
-
-        <div class="flex flex-col sm:flex-row">
-          <div class="flex-grow-0 mt-1 space-x-3 sm:space-x-0">
-            <span class="inline-block sm:block text-lg sm:text-2xl">08:00</span>
-            <span class="inline-block sm:block text-lg text-fourth dark:text-fourthDark">09:35</span>
-          </div>
-          <div class="flex-grow sm:ml-8 p-4 bg-second rounded-xl text-white dark:bg-secondDark">
-            <h3 class="mt-1 font-bold text-2xl">Mathematics</h3>
-            <p class="mt-1 text-sm">SI-T1a</p>
-            <p class="mt-4">SC-C311</p>
-            <p class="">DE-LAMEGO-RESENDE Ana</p>
-          </div>
+      <div class="flex flex-col sm:flex-row">
+        <div class="flex-grow-0 mt-1 space-x-3 sm:space-x-0">
+          <span class="inline-block sm:block text-lg sm:text-2xl">09:50</span>
+          <span class="inline-block sm:block text-lg text-fourth dark:text-fourthDark">12:15</span>
         </div>
-  
-        <div class="flex flex-col sm:flex-row">
-          <div class="flex-grow-0 mt-1 space-x-3 sm:space-x-0">
-            <span class="inline-block sm:block text-lg sm:text-2xl">09:50</span>
-            <span class="inline-block sm:block text-lg text-fourth dark:text-fourthDark">12:15</span>
-          </div>
-          <div class="flex-grow sm:ml-8 p-4 bg-third rounded-xl dark:bg-thirdDark">
-            <h3 class="mt-1 font-bold text-2xl">Module: CLD1</h3>
-            <p class="mt-1 text-sm">SI-T1a</p>
-            <p class="mt-4">SC-C311</p>
-            <p class="">Hurni Pascal</p>
-          </div>
-        </div>
-
+        <button type="button" class="flex-grow sm:ml-8 p-4 bg-third rounded-xl text-left dark:bg-thirdDark">
+          <h3 class="mt-1 font-bold text-2xl">Module: CLD1</h3>
+          <p class="mt-1 text-sm">SI-T1a</p>
+          <p class="mt-4">SC-C311</p>
+          <p class="">Hurni Pascal</p>
+        </button>
       </div>
-    </div>
 
-  </body>
+    </div>
+  </div>
+
+</div>
+</body>
 </html>
