@@ -26,6 +26,7 @@ const courses = [
 ]
 
 for (let i = 0; i < courses.length; i++) {
+  jQuery.ajaxSetup({ async: false });
   $.get('components/course-card.html', '', function (data) {
     var card = $(data);
 
@@ -38,6 +39,7 @@ for (let i = 0; i < courses.length; i++) {
 
     $('#courses-cards').append(card);
   })
+  jQuery.ajaxSetup({ async: true });
 }
 
 $('#modal-course').load('components/course.html');
