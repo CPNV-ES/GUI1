@@ -6,7 +6,7 @@ module.exports = {
   theme: {
       extend: {
           colors: {
-              white: '#F0F0F0',
+              white: '#BCC1CD',
               black: '#191919',
               main: '#F0F0F0',
               second: '#4DC591',
@@ -15,7 +15,7 @@ module.exports = {
               mainDark: '#202225',
               secondDark: '#4DC591',
               thirdDark: '#2F3136',
-              fourthDark: "#BCC1CD",
+              fourthDark: "#F0F0F0",
           }
       },
     fontFamily: {
