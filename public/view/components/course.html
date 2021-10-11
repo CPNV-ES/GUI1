@@ -1,103 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <!-- JS !-->
+    <script type="text/javascript" src="../resource/js/course.js" defer></script>
+</head>
 
-    <title>GUI</title>
+<div class="modal-course mx-12">
+  <div class="container mx-auto">
+    <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <!--
+          Background overlay, show/hide based on modal state.
 
-    <!-- CSS !-->
-    <link rel="stylesheet" href="../../resource/css/styles.css" />
+          Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <div id="modal-background" class="fixed inset-0 bg-black bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
-     <!-- JS !-->
-     <script type="text/javascript" src="../../resource/js/darkMode.js" defer></script>
-  </head>
+        <!-- This element is to trick the browser into centering the modal contents. -->
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-  <body class="mx-12">
-    <div class="container mx-auto">
+        <!--
+          Modal panel, show/hide based on modal state.
 
-      <!-- This example requires Tailwind CSS v2.0+ -->
-      <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-          <!--
-            Background overlay, show/hide based on modal state.
+          Entering: "ease-out duration-300"
+            From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            To: "opacity-100 translate-y-0 sm:scale-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100 translate-y-0 sm:scale-100"
+            To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        -->
+        <div class="inline-block align-bottom bg-main rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full dark:bg-mainDark">
+              <div class="mx-6 my-5 bg-main text-left dark:bg-mainDark">
 
-            Entering: "ease-out duration-300"
-              From: "opacity-0"
-              To: "opacity-100"
-            Leaving: "ease-in duration-200"
-              From: "opacity-100"
-              To: "opacity-0"
-          -->
-          <div class="fixed inset-0 bg-black bg-opacity-85 transition-opacity" aria-hidden="true"></div>
-
-          <!-- This element is to trick the browser into centering the modal contents. -->
-          <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
-          <!--
-            Modal panel, show/hide based on modal state.
-
-            Entering: "ease-out duration-300"
-              From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              To: "opacity-100 translate-y-0 sm:scale-100"
-            Leaving: "ease-in duration-200"
-              From: "opacity-100 translate-y-0 sm:scale-100"
-              To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          -->
-          <div class="inline-block align-bottom bg-main rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full dark:bg-mainDark">
-                <div class="mx-6 my-5 bg-main text-left dark:bg-mainDark">
-
-                  <div class="pb-4 border-b-2 border-light-gray-500 text-black dark:text-white">
-                    <div class="flex">
-                      <div class="flex flex-wrap self-center w-full space-x-2">
-                        <h3 class="flex font-bold text-2xl dark:text-fourthDark">Mathematics</h3>
-                      </div>
-                      <div class="flex place-content-between justify-end space-x-1">
-                        <button class="p-1 rounded-md bg-third text-second dark:bg-thirdDark dark:text-secondDark" type="button" aria-label="like">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                        </button>
-                      </div>
+                <div class="pb-4 border-b-2 border-light-gray-500 text-black dark:text-white">
+                  <div class="flex">
+                    <div class="flex flex-wrap self-center w-full space-x-2">
+                      <h3 class="flex font-bold text-2xl dark:text-fourthDark">Mathematics</h3>
                     </div>
-                    <p class="">SI-T1a</p>
-                    <p class="">SC-C311</p>
-                    <p class="">DE-LAMEGO-RESENDE Ana</p>
-                    <p class="">8:00 - 9:35</p>
-  
-                    <button class="mt-8 py-3 w-full rounded-md bg-second uppercase font-semibold text-main dark:bg-secondDark dark:text-fourthDark" type="button" aria-label="like">
-                      Manage absences
-                    </button>
+                    <div class="flex place-content-between justify-end space-x-1">
+                      <button class="btn-close-course p-1 rounded-md bg-third text-second dark:bg-thirdDark dark:text-secondDark" type="button" aria-label="like">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
-                  <div class="py-4 border-b-2 border-light-gray-500 text-black dark:text-white">
-                    <h3 class="font-bold text-2xl dark:text-fourthDark">Notice</h3>
-                    <p class="text-sm">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                      non risus. Suspendisse lectus tortor, dignissim sit amet,
-                      adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-                      diam. Maecenas ligula massa, varius a, semper congue, euismod
-                      non, mi. Proin porttitor, orci nec nonummy molestie, enim est
-                      eleifend mi, non fermentum diam nisl sit amet erat.
-                    </p>
-                  </div>
-    
-                  <div class="py-4 text-black dark:text-white">
-                    <h3 class="font-bold text-2xl dark:text-fourthDark">Homework</h3>
-                    <p class="text-sm">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                      non risus. Suspendisse lectus tortor, dignissim sit amet,
-                      adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-                      diam. Maecenas ligula massa, varius a, semper congue, euismod
-                      non, mi. Proin porttitor, orci nec nonummy molestie, enim est
-                      eleifend mi, non fermentum diam nisl sit amet erat.
-                    </p>
-                  </div>
+                  <p class="">SI-T1a</p>
+                  <p class="">SC-C311</p>
+                  <p class="">DE-LAMEGO-RESENDE Ana</p>
+                  <p class="">8:00 - 9:35</p>
 
+                  <button class="mt-8 py-3 w-full rounded-md bg-second uppercase font-semibold text-main dark:bg-secondDark dark:text-fourthDark" type="button" aria-label="like">
+                    Manage absences
+                  </button>
                 </div>
-            </div>
-        </div>
-      </div>
+                <div class="py-4 border-b-2 border-light-gray-500 text-black dark:text-white">
+                  <h3 class="font-bold text-2xl dark:text-fourthDark">Notice</h3>
+                  <p class="text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    non risus. Suspendisse lectus tortor, dignissim sit amet,
+                    adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+                    diam. Maecenas ligula massa, varius a, semper congue, euismod
+                    non, mi. Proin porttitor, orci nec nonummy molestie, enim est
+                    eleifend mi, non fermentum diam nisl sit amet erat.
+                  </p>
+                </div>
+  
+                <div class="py-4 text-black dark:text-white">
+                  <h3 class="font-bold text-2xl dark:text-fourthDark">Homework</h3>
+                  <p class="text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    non risus. Suspendisse lectus tortor, dignissim sit amet,
+                    adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+                    diam. Maecenas ligula massa, varius a, semper congue, euismod
+                    non, mi. Proin porttitor, orci nec nonummy molestie, enim est
+                    eleifend mi, non fermentum diam nisl sit amet erat.
+                  </p>
+                </div>
 
+              </div>
+          </div>
+      </div>
     </div>
-  </body>
-</html>
+
+  </div>
+</div>
