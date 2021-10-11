@@ -40,4 +40,4 @@ for (let i = 0; i < courses.length; i++) {
   })
 }
 
-$('#modal-course').load('components/course.html')
+$('#modal-course').load('components/course.html');
