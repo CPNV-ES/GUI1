@@ -42,4 +42,7 @@ for (let i = 0; i < courses.length; i++) {
   jQuery.ajaxSetup({ async: true });
 }
 
-$('#modal-course').load('components/course.html');
+$('.course-card').click(function () {
+  $('#modal-course').load('components/course.html')
+})
+

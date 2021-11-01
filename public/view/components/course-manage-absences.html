@@ -1,125 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <title>GUI</title>
-
-    <!-- CSS !-->
-    <link rel="stylesheet" href="../../resource/css/styles.css"/>
-
-    <!-- JS !-->
-    <script type="text/javascript" src="../../resource/js/darkMode.js" defer></script>
-</head>
-
-<div class="mx-12">
-    <div class="container mx-auto">
-
-        <!-- This example requires Tailwind CSS v2.0+ -->
-        <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-                <!--
-                  Background overlay, show/hide based on modal state.
-
-                  Entering: "ease-out duration-300"
-                    From: "opacity-0"
-                    To: "opacity-100"
-                  Leaving: "ease-in duration-200"
-                    From: "opacity-100"
-                    To: "opacity-0"
-                -->
-                <div class="fixed inset-0 bg-black bg-opacity-85 transition-opacity" aria-hidden="true"></div>
-
-                <!-- This element is to trick the browser into centering the modal contents. -->
-                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
-                <!--
-                  Modal panel, show/hide based on modal state.
-
-                  Entering: "ease-out duration-300"
-                    From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                    To: "opacity-100 translate-y-0 sm:scale-100"
-                  Leaving: "ease-in duration-200"
-                    From: "opacity-100 translate-y-0 sm:scale-100"
-                    To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                -->
-                <div class="inline-block align-bottom bg-main rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full dark:bg-mainDark">
-                    <div class="mx-6 my-5 bg-main text-left dark:bg-mainDark">
-
-                        <div class="pb-4 border-b-2 border-light-gray-500 text-black dark:text-white">
-                            <div class="flex">
-                                <div class="flex flex-wrap self-center w-full space-x-2 dark:text-fourthDark">
-                                    <h3 class="flex font-bold text-2xl">Mathematics</h3>
-                                </div>
-                                <div class="flex place-content-between justify-end space-x-1">
-                                    <button class="p-1 rounded-md bg-third text-second dark:text-secondDark dark:bg-thirdDark"
-                                            type="button" aria-label="like">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                             viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                  d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <p>SI-T1a</p>
-                            <p>SC-C311</p>
-                            <p>DE-LAMEGO-RESENDE Ana</p>
-                            <p>8:00 - 9:35</p>
-                        </div>
-
-                        <div class="py-4">
-                            <div class="relative my-1 py-3 w-full rounded-md text-center bg-third dark:bg-thirdDark text-black dark:text-fourthDark"
-                                 aria-label="like">
-                            <button class="font-semibold border-b-2 w-11/12 border-mainDark pb-3"
-                                    type="button" aria-label="like">
-                                <span class="uppercase">Lastname</span>
-                                <span>Firstname</span>
-                            </button>
-                                <div class="grid mx-2.5 grid-cols-2 place-items-center pt-3 text-main dark:text-fourthDark">
-                                    <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
-                                        missing
-                                    </button>
-                                    <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
-                                        late
-                                    </button>
-                                    <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
-                                        missing justifiy
-                                    </button>
-                                    <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
-                                        vacation
-                                    </button>
-                                    <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
-                                        rendez-vous
-                                    </button>
-                                    <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
-                                        support
-                                    </button>
-                                    <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
-                                        exclude
-                                    </button>
-                                    <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
-                                        home work not done
-                                    </button>
-                                </div>
-                                <button class="relative my-1 py-3 w-11/12 rounded-md bg-second font-semibold text-main uppercase dark:bg-secondDark dark:text-fourthDark">
-                                    missing justify off limits
-                                </button>
-
-                            </div>
-                            <button class="relative my-1 py-3 w-full rounded-md bg-third font-semibold text-black dark:bg-thirdDark dark:text-fourthDark"
-                                    type="button" aria-label="like">
-                                <span class="uppercase">Lastname</span>
-                                <span>Firstname</span>
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
+<div id="absences-management">
+    <div class="grid mx-2.5 grid-cols-2 place-items-center pt-3 text-main dark:text-fourthDark">
+        <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
+            missing
+        </button>
+        <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
+            late
+        </button>
+        <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
+            missing justifiy
+        </button>
+        <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
+            vacation
+        </button>
+        <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
+            rendez-vous
+        </button>
+        <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
+            support
+        </button>
+        <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
+            exclude
+        </button>
+        <button class="relative my-1 py-3 w-11/12 rounded-md font-semibold uppercase bg-second dark:bg-secondDark">
+            home work not done
+        </button>
     </div>
+    <button class="relative my-1 py-3 w-11/12 rounded-md bg-second font-semibold text-main uppercase dark:bg-secondDark dark:text-fourthDark">
+        missing justify off limits
+    </button>
 </div>
-</html>
