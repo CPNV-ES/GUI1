@@ -1,2 +1,7 @@
+.idea/GUI1.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/php.xml
 
-.idea
+node_modules/
