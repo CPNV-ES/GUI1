@@ -1,4 +1,5 @@
-const NB_DAYS_IN_WEEK = 5;
+import { view, week } from './options.js';
+
 const COURSES = [
   [
     {
@@ -150,13 +151,17 @@ const COURSES = [
   []
 ];
 
-var date = new Date();
-let daysBtnContainer = $('#component-days-btn-container');
-let coursesCardContainer = $('#component-courses-card-container');
+if (localStorage.getItem('date') === null) {
+  localStorage.date = new Date();
+}
+
+var daysBtnContainer = $('#component-days-btn-container');
+var coursesCardContainer = $('#component-courses-card-container');
 
 updateCalendarWeek();
 
 function updateCalendarWeek() {
+  let date = new Date(localStorage.date);
 
   // Weekly Days Buttons
   document.getElementById('day-value').textContent = date.getDate();
@@ -164,70 +169,117 @@ function updateCalendarWeek() {
   document.getElementById('date').textContent = date.toLocaleString('default', { month: 'short' }) + ' ' + date.getFullYear();
 
   daysBtnContainer.html('');
-  var firstDayOfTheWeek = dateFns.startOfWeek(date, {weekStartsOn: 1});
+  let firstDayOfTheWeek = dateFns.startOfWeek(date, {weekStartsOn: 1});
 
-  for (let i = 0; i < NB_DAYS_IN_WEEK; i++) {
-    var day = dateFns.addDays(firstDayOfTheWeek, i);
-    var component = ((day.getDate() == date.getDate()) ? 'components/days-btn/active-days-btn.html' : 'components/days-btn/days-btn.html');
+  for (let i = 0; i < localStorage.weekSize; i++) {
+    let day = dateFns.addDays(firstDayOfTheWeek, i);
+    let component = ((day.getDate() == date.getDate()) ? 'components/days-btn/active-days-btn.html' : 'components/days-btn/days-btn.html');
 
     jQuery.ajaxSetup({ async: false });
     $.get(component, function (data) {
-      var dayBtn = $(data);
+      let dayBtn = $(data);
       dayBtn.attr('data-date', (day.toJSON(), new Date(day.getTime() - (day.getTimezoneOffset() * 60000)).toJSON()));
-      dayBtn.find('.days-name').text(day.toLocaleString('default', {weekday: 'short'}));
+      dayBtn.find('.days-name').text(day.toLocaleString('default', {weekday: localStorage.weekSize > week.WORK ? 'narrow' : 'short'}));
       dayBtn.find('.days-value').text(day.getDate());
+
+      dayBtn.click(function () {
+        let dayBtn = $(this);
+        localStorage.date = new Date(dayBtn.data('date'));
+        updateCalendarWeek();
+      })
 
       daysBtnContainer.append(dayBtn)
     })
     jQuery.ajaxSetup({ async: true });
   }
-
-  $('.days-btn').on('click', function(){
-    var dayBtn = $(this);
-    date = new Date(dayBtn.data('date'));
-    updateCalendarWeek();
-  })
-
+  
   // Daily Courses Cards
   coursesCardContainer.html('');
-  let course = COURSES[(date.getDate() - firstDayOfTheWeek.getDate())];
-  
-  for (let i = 0; i < course.length; i++) {
-    jQuery.ajaxSetup({ async: false });
-    $.get('components/course-card.html', '', function (data) {
-      var card = $(data);
 
-      $(card).find('.course-name').text(course[i]['name']);
-      $(card).find('.course-start-time').text(course[i]['startTime']);
-      $(card).find('.course-end-time').text(course[i]['endTime']);
-      $(card).find('.course-class').text(course[i]['class']);
-      $(card).find('.course-room').text(course[i]['room']);
-      $(card).find('.course-teacher').text(course[i]['teacher']);
+  jQuery.ajaxSetup({ async: false });
+  let header = $('#calendar-header');
 
-      coursesCardContainer.append(card);
-    })
-    jQuery.ajaxSetup({ async: true });
+  if (localStorage.viewMode == view.DAY) {
+    if (header.hasClass('hidden')) {
+      header.removeClass('hidden');
+    }
+
+    let course = COURSES[(date.getDate() - firstDayOfTheWeek.getDate())];
+    for (let i = 0; i < course.length; i++) {
+      renderCourse(course[i], coursesCardContainer)
+    }
+  } else if (localStorage.viewMode == view?.WEEK) {
+      if (!header.hasClass('hidden')) {
+        header.addClass('hidden');
+      }
+
+    for (let x = 0; x < localStorage.weekSize; x++) {
+      let course = COURSES[x];
+      let day = dateFns.addDays(firstDayOfTheWeek, x);
+
+      let weekElement = $('<div id="week-container" class="flex flex-row mt-10"></div>');
+      coursesCardContainer.append(weekElement);
+
+      let dayElement = $(
+        '<div class="days flex flex-col flex-grow mx-2 text-center"><h2 class="capitalize">'+
+          day.toLocaleString('default', { weekday: "narrow" }) + 
+        '</h2></div>');
+
+      $('#week-container').append(dayElement);
+      for (let i = 0; i < course.length; i++) {
+        renderCourse(course[i], dayElement)
+      }
+    }
   }
+  jQuery.ajaxSetup({ async: true });
+}
 
-  // Courses Cards Events
-  $('.course-card').click(function () {
-    $('#modal-course').load('components/course.html');
+function renderCourse(course, parent) {
+  let component = (localStorage.viewMode == view?.DAY) ? 
+    'components/day-course-card.html' : 
+    'components/week-course-card.html';
+  $.get(component, '', function (data) {
+    let card = $(data);
+
+    card.find('.course-name').text(course['name']);
+    card.find('.course-start-time').text(course['startTime']);
+    card.find('.course-end-time').text(course['endTime']);
+    card.find('.course-class').text(course['class']);
+    card.find('.course-room').text(course['room']);
+    card.find('.course-teacher').text(course['teacher']);
+
+    card.click(function () {
+      localStorage.course = JSON.stringify(course);
+
+      $.get('modals/course.html', '', function (modalCourseElement) {
+        let modalCourse = $(modalCourseElement);
+
+        modalCourse.find('#modal-background').click(function () {
+          $('#modal-course').html('');
+        })
+
+        $('#modal-course').append(modalCourse);
+      })
+    })
+
+    parent.append(card);
   })
 }
 
 // Days Buttons Events
 $('#previous-week-btn').click(function () {
-  date = dateFns.startOfWeek(dateFns.addDays(date, -7), {weekStartsOn: 1});
+  localStorage.date = dateFns.startOfWeek(dateFns.addDays(localStorage.date, -7), {weekStartsOn: 1});
   updateCalendarWeek();
 })
 
 $('#next-week-btn').click(function () {
-  date = dateFns.startOfWeek(dateFns.addDays(date, 7), {weekStartsOn: 1});
+  localStorage.date = dateFns.startOfWeek(dateFns.addDays(localStorage.date, 7), {weekStartsOn: 1});
   updateCalendarWeek();
 })
 
 $('#today-btn').click(function () {
-  date = new Date();
+  localStorage.date = new Date();
   updateCalendarWeek();
 })
 
+export { updateCalendarWeek }

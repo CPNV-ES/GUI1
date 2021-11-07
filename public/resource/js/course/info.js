@@ -1,8 +1,17 @@
+var modal = $('#modal-content');
+var course = JSON.parse(localStorage.course);
+
+$('#course-name').text(course['name']);
+$('#course-class').text(course['class']);
+$('#course-room').text(course['room']);
+$('#course-teacher').text(course['teacher']);
+$('#course-time').text(course['startTime'] + ' - ' + course['endTime']);
+
 $('#btn-course-absences').click(function () {
-  $('#modal-content').html('')
-  $('#modal-content').load('components/course-absences.html')
+  modal.html('');
+  modal.load('components/course-absences.html');
 })
 
 $('#btn-close-course').click(function () {
-  $('#modal-course').html('')
+  $('#modal-course').html('');
 })
