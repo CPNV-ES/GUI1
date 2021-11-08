@@ -3,7 +3,7 @@
 <div class="pb-4 border-b-2 border-light-gray-500 text-black dark:text-white">
     <div class="flex">
         <div class="flex flex-wrap self-center w-full space-x-2 dark:text-fourthDark">
-            <h3 class="flex font-bold text-2xl">Mathematics</h3>
+            <h3 id="course-name" class="flex font-bold text-2xl dark:text-fourthDark"></h3>
         </div>
         <div class="flex place-content-between justify-end space-x-1">
             <button id="btn-back" class="p-1 rounded-md bg-third text-second dark:text-secondDark dark:bg-thirdDark" type="button" aria-label="like">
@@ -13,13 +13,13 @@
             </button>
         </div>
     </div>
-    <p class="">SI-T1a</p>
-    <p class="">SC-C311</p>
-    <p class="">DE-LAMEGO-RESENDE Ana</p>
-    <p class="">8:00 - 9:35</p>
+    <p id="course-class"></p>
+    <p id="course-room"></p>
+    <p id="course-teacher"></p>
+    <p id="course-time"></p>
 </div>
 
-<div id="students" class="py-4 text-black dark:text-fourthDark">
+<div id="students" class="py-4 text-black dark:text-fourthDark animate-fade-in-down">
     <button class="btn-student relative my-1 py-3 w-full rounded-md font-semibold bg-third dark:bg-thirdDark" type="button" aria-label="like">
         <span class="uppercase">Lastname</span>
         <span>Firstname</span>

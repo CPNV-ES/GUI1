@@ -1,60 +1,58 @@
-<div class="mx-12">
-    <div class="container mx-auto">
-        <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-                <div id="modal-background" class="fixed inset-0 bg-black bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-                <!-- This element is to trick the browser into centering the modal contents. -->
-                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-                
-                <div class="inline-block align-bottom bg-main rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full dark:bg-mainDark">
-                    <div class="mx-6 my-5 bg-main text-left dark:bg-mainDark">
-                        <!-- Header -->
-                        <div class="flex">
-                            <div class="flex flex-wrap self-center w-full space-x-2">
-                                <h3 class="flex font-bold text-2xl dark:text-fourthDark">Options</h3>
+<div class="container mx-auto">
+    <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen px-8 text-center sm:block sm:p-0">
+            <div id="modal-background" class="fixed inset-0 bg-black bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <!-- This element is to trick the browser into centering the modal contents. -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div class="absolute sm:relative top-0 inline-block sm:max-w-lg w-full align-middle rounded-lg text-left overflow-hidden shadow-xl transform transition-all bg-main dark:bg-mainDark">
+                <div class="mx-6 my-5 bg-main text-left dark:bg-mainDark">
+                    <!-- Header -->
+                    <div class="flex">
+                        <div class="flex flex-wrap self-center w-full space-x-2">
+                            <h3 class="flex font-bold text-2xl dark:text-fourthDark">Options</h3>
+                        </div>
+                        <div class="flex place-content-between justify-end space-x-1">
+                            <button id="btn-close" class="p-1 rounded-md bg-third text-second dark:bg-thirdDark dark:text-secondDark" type="button" aria-label="like">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Option view mode -->
+                    <div class="my-4">
+                        <span>View mode</span>
+                        <div class="mt-1">
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" id="view-mode-day" class="view-mode-radio" name="view-mode" value="day" checked />
+                                    <span class="ml-2">Day</span>
+                                </label>
                             </div>
-                            <div class="flex place-content-between justify-end space-x-1">
-                                <button id="btn-close" class="p-1 rounded-md bg-third text-second dark:bg-thirdDark dark:text-secondDark" type="button" aria-label="like">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" id="view-mode-week" class="view-mode-radio" name="view-mode" value="week" />
+                                    <span class="ml-2">Week</span>
+                                </label>
                             </div>
                         </div>
-                        <!-- Option view mode -->
-                        <div class="my-4">
-                            <span>View mode</span>
-                            <div class="mt-1">
-                                <div>
-                                    <label class="inline-flex items-center">
-                                        <input type="radio" id="view-mode-day" class="view-mode-radio" name="view-mode" value="day" checked />
-                                        <span class="ml-2">Day</span>
-                                    </label>
-                                </div>
-                                <div>
-                                    <label class="inline-flex items-center">
-                                        <input type="radio" id="view-mode-week" class="view-mode-radio" name="view-mode" value="week" />
-                                        <span class="ml-2">Week</span>
-                                    </label>
-                                </div>
+                    </div>
+                    <!-- Option week mode -->
+                    <div class="my-4">
+                        <span>Week size</span>
+                        <div class="mt-1">
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" id="week-size-5" class="week-size-radio" name="week-size" value="work" checked />
+                                    <span class="ml-2">Working day</span>
+                                </label>
                             </div>
-                        </div>
-                        <!-- Option week mode -->
-                        <div class="my-4">
-                            <span>Week size</span>
-                            <div class="mt-1">
-                                <div>
-                                    <label class="inline-flex items-center">
-                                        <input type="radio" id="week-size-5" class="week-size-radio" name="week-size" value="work" checked />
-                                        <span class="ml-2">Working day</span>
-                                    </label>
-                                </div>
-                                <div>
-                                    <label class="inline-flex items-center">
-                                        <input type="radio" id="week-size-7" class="week-size-radio" name="week-size" value="full" />
-                                        <span class="ml-2">Full</span>
-                                    </label>
-                                </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" id="week-size-7" class="week-size-radio" name="week-size" value="full" />
+                                    <span class="ml-2">Full</span>
+                                </label>
                             </div>
                         </div>
                     </div>
