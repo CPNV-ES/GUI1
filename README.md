@@ -5,7 +5,10 @@ Project done in the GUI1 course. It aims to adapte the school's schedule and abs
 ###Documentation and mock-up
 https://penfu.notion.site/Projet-161c4f15e2034acbbc018da2b963dd5a
 
-###Run
+###Visit on the internet
+http://gui1-calendar.herokuapp.com/view/calendar.html
+
+###Run locally
 
 ```shell
 npm install
