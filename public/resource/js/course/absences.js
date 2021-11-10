@@ -8,7 +8,7 @@ $('#course-time').text(course['startTime'] + ' - ' + course['endTime']);
 
 $('#btn-back').click(function () {
   $('#modal-content').html('')
-  $('#modal-content').load('components/course-info.html')
+  $('#modal-content').load('view/components/course-info.html')
 })
 
 $('.btn-student').click(function () {
@@ -18,7 +18,7 @@ $('.btn-student').click(function () {
     $('#absences-management').remove();
   }
 
-  $.get('components/course-manage-absences.html', function (data) {
+  $.get('view/components/course-manage-absences.html', function (data) {
     element.append(data);
   })
 })

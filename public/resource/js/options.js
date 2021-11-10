@@ -18,7 +18,7 @@ if (localStorage.getItem('weekSize') === null) {
 	localStorage.weekSize = week.WORK;
 }
 
-$.get('modals/options.html', function(data) {
+$.get('view/modals/options.html', function(data) {
 	let modal = $(data);
 
 	// Check the stored options

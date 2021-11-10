@@ -1,1 +1,1 @@
-$('#modal-content').load('components/course-info.html')
+$('#modal-content').load('view/components/course-info.html')

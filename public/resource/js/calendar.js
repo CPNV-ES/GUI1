@@ -173,7 +173,7 @@ function updateCalendarWeek() {
 
   for (let i = 0; i < localStorage.weekSize; i++) {
     let day = dateFns.addDays(firstDayOfTheWeek, i);
-    let component = ((day.getDate() == date.getDate()) ? 'components/days-btn/active-days-btn.html' : 'components/days-btn/days-btn.html');
+    let component = ((day.getDate() == date.getDate()) ? 'view/components/days-btn/active-days-btn.html' : 'view/components/days-btn/days-btn.html');
 
     jQuery.ajaxSetup({ async: false });
     $.get(component, function (data) {
@@ -236,8 +236,8 @@ function updateCalendarWeek() {
 
 function renderCourse(course, parent) {
   let component = (localStorage.viewMode == view?.DAY) ? 
-    'components/day-course-card.html' : 
-    'components/week-course-card.html';
+    'view/components/day-course-card.html' : 
+    'view/components/week-course-card.html';
   $.get(component, '', function (data) {
     let card = $(data);
 
@@ -251,7 +251,7 @@ function renderCourse(course, parent) {
     card.click(function () {
       localStorage.course = JSON.stringify(course);
 
-      $.get('modals/course.html', '', function (modalCourseElement) {
+      $.get('view/modals/course.html', '', function (modalCourseElement) {
         let modalCourse = $(modalCourseElement);
 
         modalCourse.find('#modal-background').click(function () {

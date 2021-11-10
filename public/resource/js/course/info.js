@@ -9,7 +9,7 @@ $('#course-time').text(course['startTime'] + ' - ' + course['endTime']);
 
 $('#btn-course-absences').click(function () {
   modal.html('');
-  modal.load('components/course-absences.html');
+  modal.load('view/components/course-absences.html');
 })
 
 $('#btn-close-course').click(function () {
