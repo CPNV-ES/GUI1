@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "tailwindcss build -i ./src/styles.css -o ./public/resource/css/styles.css"
+    "build": "tailwindcss build -i ./resource/sass/app.scss -o ./public/resource/css/app.css"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.4",
